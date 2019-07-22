@@ -1,0 +1,9 @@
+#heading_subSmall {
+  width: 100%;
+}
+#heading_subSmall h2 {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+/* MAKE SURE YOUR STYLES ARE NAMED WELL OR THEY WILL AFFECT YOUR VIEW */

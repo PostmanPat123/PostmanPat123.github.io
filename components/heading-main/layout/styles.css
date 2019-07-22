@@ -1,0 +1,11 @@
+#main_heading {
+  
+}
+#main_heading h1 {
+  color: #0c803c;
+  padding: 10px 5%;
+  font-size: 280%;
+  font-weight: 200;
+  text-decoration: underline;
+}
+/* MAKE SURE YOUR STYLES ARE NAMED WELL OR THEY WILL AFFECT YOUR VIEW */

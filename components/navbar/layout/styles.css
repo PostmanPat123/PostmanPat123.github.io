@@ -1,0 +1,47 @@
+#navbar_wrapper {
+  min-width: 275px;
+  max-width: 275px;
+  height: 100%;
+  background: #fff;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+#navbar_wrapper .nav_header {
+  color: #3453a8;
+  height: 25%;
+}
+#navbar_wrapper .nav_header h2 {
+  
+}
+#navbar_wrapper .nav_header h3 {
+  
+}
+#navbar_wrapper .nav_options {
+  width: 100%;
+  height: 70%;
+  padding: 0 10px;
+}
+#navbar_wrapper .nav_options .nav_option {
+  width: 100%;
+  margin-bottom: 8%;
+}
+#navbar_wrapper .nav_options .nav_option .opt_icon {
+  width: 10%;
+}
+#navbar_wrapper .nav_options .nav_option .opt_icon i {
+  color: #2a4caa;
+}
+#navbar_wrapper .nav_options .nav_option .opt_view {
+  color: #0c803c;
+  width: 90%;
+  padding-left: 12%;
+  font-weight: 200;
+  font-size: 16px;
+}
+#navbar_wrapper .nav_options .nav_option .opt_view:hover {
+  text-decoration: underline;
+}
+/* MAKE SURE YOUR STYLES ARE NAMED WELL OR THEY WILL AFFECT YOUR VIEW */

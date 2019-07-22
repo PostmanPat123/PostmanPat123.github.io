@@ -1,0 +1,56 @@
+.content {
+  width: 80%;
+  margin: 10px;
+  margin-left: 295px;
+  padding-right: 6%;
+  border-radius: 5px;
+  background-color: #fff;  
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);-ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);-o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+.content .section {
+  padding: 3% 5%;
+}
+.content .indent {
+  padding-left: 6%;
+}
+.content b.highlight {
+  letter-spacing: 1px;
+  font-family: monospace;
+  background-color: #eeee92;
+}
+.content .section .info {
+  padding: 0x 5px;
+  padding-top: 15px;
+  font-size: 14px;
+  line-height: 19px;
+}
+.content table {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+}
+.content table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.content th {
+  color: #fff;
+  padding: 8px;
+  background-color: #3453A8;
+}
+.content th.first {
+  border-radius: 10px 0 0 0;
+}
+.content th.second {
+  border-radius: 0 10px 0 0;
+}
+.content td.binding {
+  /* font-weight: bold; */
+  /* background-color: #EEEE92; */
+}
+.content td.type {
+
+}
+.content td.desc {
+
+}

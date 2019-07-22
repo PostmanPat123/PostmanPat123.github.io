@@ -1,0 +1,45 @@
+<!-- //? Navbar -->
+<navBar></navBar>
+
+<!-- //? all content -->
+<div class="content">     
+  <heading-main heading="Routing in Quantum JS"></heading-main>
+
+  <div class="section">
+    <heading-sub heading="Building up your Routes"></heading-sub>
+    <div class="info">
+    Creating a single page application (SPA) with Quantum JS is made very simple with our routing system. All you need to do is <link-comp label="build up a view" router="/view-controller"></link-comp> that your application can go to, import them and pass them to a routes array. Lets have a look at an example.        
+    </div>
+  </div>
+
+  <div class="section">
+    <heading-sub heading="Importing your Views"></heading-sub>
+    <div class="info">
+      The first step you need to take is start importing all the <b>Views</b> you have built for your application.
+    </div>
+    <heading-sub heading="Buidling your Routes"></heading-sub>
+    <div class="info">
+      Once you have all your <b>Views</b> imported, you can now start building up you <b>routes</b>. Your routes needs to be an array containing all the <b>route objects</b>. Each <b>Route Object</b> will contain the keys: <b>(path and handler)</b>. have a look at the example below to see what your routes should look like.
+
+      <div class="section">
+        <heading-small heading="Route Prop: path"></heading-small>
+        <div class="info">
+          The <b>path</b> property is where you specify the url needed to go to this route.
+        </div>
+        <heading-small heading="Route Prop: handler"></heading-small>
+        <div class="info">
+          This is where you would put the imported <b>View Controller</b>.
+        </div>
+      </div>
+    </div>
+    <img-comp src="./src/images/creatingRoute.jpg"></img-comp>
+  </div>
+
+  <div class="section">
+    <heading-sub heading="You are Done!"></heading-sub>
+    <div class="info">
+      Well done! you have successfully added routes to your application.
+    </div>
+  </div>
+
+</div>

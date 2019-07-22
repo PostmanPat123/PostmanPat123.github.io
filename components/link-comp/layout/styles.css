@@ -1,0 +1,12 @@
+#link_comp {
+  padding: 2px 5px;
+  border-radius: 5px;
+  background-color: #2a4caa;
+  border: solid 1px transparent;
+}
+#link_comp:hover {
+  color: #2a4caa;
+  background-color: transparent;
+  border: solid 1px #2a4caa;
+}
+/* MAKE SURE YOUR STYLES ARE NAMED WELL OR THEY WILL AFFECT YOUR VIEW */

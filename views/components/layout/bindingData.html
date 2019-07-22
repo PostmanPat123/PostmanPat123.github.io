@@ -1,0 +1,130 @@
+<div class="flex-row">
+  <div id="Content" class="flex-col">     
+    <heading-main heading="{{viewName}}"></heading-main>
+
+    <div class="section">      
+      <heading-sub heading="Why Bind Data?"></heading-sub> 
+      <div class="info">
+        We Know that alot of applications separate markup and logic into separtate files. In Quantum JS we decided to allow both to work side by side. We enable this with <span class="bold">Declerative Expressions</span>. These expressions make your UI alot easier to read and understand.
+      </div>      
+    </div>
+
+    <div class="section">      
+      <heading-sub heading="How to Bind a property"></heading-sub> 
+      <div class="info">
+        In order to bind a variable to your template, all you need to do is wrap the property name in <span class="bold">Moustache Braces</span> and place it anywhere in your template like this.
+      </div>
+      <img-comp src="./src/img/bindVar.png"></img-comp>
+      <div class="info">
+        By doing this, Quantum will get your property value and place it in the position you placed it in.
+        <warn-comp head="Warning" text="Unfortunately you can only add one expression per html element. For example, if you are wanting to join a firstname and lastname with expressions, you will need to wrap each expression in a div or span element"></warn-comp>
+      </div>
+    </div>
+
+    <div class="section">      
+      <heading-sub heading="Directives"></heading-sub> 
+      <div class="info">
+        Directives are special attributes with the <span class="bold">"&#64;"</span> prefix that Quantum JS has built in out of the box. They are used to make you development alot faster and apply changes to the <span class="bold">DOM</span> when your <span class="bold">data()</span> changes.<br><br>
+
+        For example, lets say you have a <span class="bold">div</span> which should be displayed when a user doesn't fill in an input field. We would use the <span class="bold">&#64;If</span> directive like this.
+        <img-comp src="./src/img/ifDirective.png"></img-comp>
+        As you can see the property <span class="bold">error</span> is true, which means the element with the <span class="bold">&#64;If</span> directive will be displayed.<br><br>                   
+      </div>
+    </div>
+
+    <div class="section">      
+      <heading-sub heading="&#64;If Directive"></heading-sub> 
+      <div class="info">
+      The <span class="bold">&#64;If</span> directive is used when you are wanting to render an element dependent on a <span class="bold">boolean</span> value in your data set. Like in the example above, we use <span class="bold">&#64;If</span> to display user feedback if the user did not type in the required fields.
+      </div>
+    </div>
+
+    <div class="section">
+      <heading-sub heading="&#64;Bind Directive"></heading-sub><br>
+      The <span class="bold">@Bind</span> directive is very useful. You can use this directive to bind a property in your <span class="bold">View Object</span> to an attribute on an element. For instance, if you want to apply a class to an element if an error occurs. You would use the <span class="bold">&#64;Bind:class</span> attribute to do so.<br></br>
+      <img-comp src="./src/img/bindProp.png"></img-comp>
+      <div class="section">
+        <heading-subSmall heading="What can you bind to?"></heading-subSmall>
+        <table>
+          <tr>
+            <th>Binding</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td class="bold">&#64;Bind:id</td>
+            <td>String</td>
+            <td>Allows you to bind your prop to the ID of the element</td>
+          </tr>
+          <tr>
+            <td class="bold">&#64;Bind:class</td>
+            <td>String</td>
+            <td>Allows you to bind your prop to the CLASS of the element</td>
+          </tr>
+          <tr>
+            <td class="bold">&#64;Bind:disabled</td>
+            <td>Boolean</td>
+            <td>Will add a disbaled attribute to the element depending on the value of your prop</td>
+          </tr>
+          <tr>
+            <td class="bold">&#64;Bind:checked</td>
+            <td>Boolean</td>
+            <td>This will set a checked attribute to the element depending on the value of your prop</td>
+          </tr>
+          <tr>
+            <td class="bold">&#64;Bind:href</td>
+            <td>String</td>
+            <td>Will set the href attribute to the value of your prop</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">      
+      <heading-sub heading="&#64;On Directive"></heading-sub> 
+      <div class="info">
+      The <span class="bold">@On</span> directive is used to bind a users action to an element. For example, if you have a button to alert a user's name once it's clicked. You would use the <span class="bold">&#64;On:Click</span> directive and this would add an <span class="bold">onclick</span> event listener to that element.
+      </div>
+      <img-comp src="./src/img/onProp.png"></img-comp>
+      <div class="section">
+        <heading-subSmall heading="What can you bind to?"></heading-subSmall>
+        <table>
+          <tr>
+            <th>Binding</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td class="bold">&#64;On:Click</td>
+            <td>String</td>
+            <td>This will add a click <span class="bold">event</span> to your element</td>
+          </tr>
+          <tr>
+            <td class="bold">&#64;On:Enter</td>
+            <td>String</td>
+            <td>This enables you to add an enter <span class="bold">event</span> to your element</td>
+          </tr>
+          <tr>
+            <td class="bold">&#64;On:Submit</td>
+            <td>String</td>
+            <td>This allows you to add a submit <span class="bold">event to a form</span></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+    
+      <heading-sub heading="&#64;For Directive"></heading-sub>
+      <div class="info">
+        We can use the <span class="bold">&#64;For</span> directive to render a list of items based on an array. The <span class="bold">&#64;For</span> directive uses a special syntax: <span class="bold">"item in items"</span>, unlike the other attributes you can use. In this example <span class="bold">items</span> is an <span class="bold">array</span> in your data set, and <span class="bold">item</span> is the iterator for the array being looped on. Lets look at an example.
+        <tip-comp head="NOTE" text="The element in which you insert the &#64;For Directive into, needs to be a container because it loops it's contents. As you can see in the example, we used a <span class='bold'>ul</span> (a container element)"></tip-comp>
+        <warn-comp head="Warning" text="The &#64;For directive does not support looping through a nested object in an array. You can only loop through an array of objects that do not contain other objects."></warn-comp>
+        <img-comp src="./src/img/forProp.png"></img-comp>
+      </div>
+
+    </div>
+    
+  </div>
+  <docs-navBar></docs-navBar>
+</div>

@@ -1,0 +1,149 @@
+<!-- //? Navbar -->
+<navBar></navBar>
+
+<!-- //? all content -->
+<div class="content">
+  <heading-main heading="State Management"></heading-main>
+
+  <div class="section">
+    <heading-sub heading="What is State"></heading-sub>
+    <div class="info">
+      <b>State</b> is a way to mannage the "state" of your application. It is the single source of truth and 
+      holds the whole state tree. In truth, it is just an object. To change the state, you must 
+      <b class="highlight">Commit</b> a mutation to it. For instance if you have a username inside your
+      <b>View Controller</b>. And you display it as a heading in your template.
+    </div>
+      <img-comp src="./src/images/stateExample.jpg"></img-comp>
+    <div class="info">
+      Now if you update that name via a method inside your <b class="highlight">View Model</b>. This is all good, but 
+      what happens when you <b class="highlight">change pages and come back?</b> The user's name that you changed with your 
+      method got erased your <b>View Model</b>. This is where <b class="highlight">State</b> comes into 
+      the picture!
+      <img-comp src="./src/images/stateExample2.jpg"></img-comp>
+    </div>
+  </div>
+
+  <div class="section">
+    <heading-sub heading="What to do to Use State?"></heading-sub>
+    <div class="info">
+      Inside the <b class="highlight">shared</b> folder at the root of the application. you'll finr a file called
+      <b class="highlight">$app.state.js</b>. In this file you'll find an exported object which contains four
+      properties <b class="highlight">(state, getters, mutations, actions)</b>. Read more to find out what each
+      of these properties do.
+    </div>
+    <img-comp src="./src/images/stateObj.jpg"></img-comp>
+  </div>
+
+  <div class="section">
+    <heading-sub heading="How it Works"></heading-sub>
+    <div class="info">
+      Your <b class="highlight">state</b> is the single source of truth and holds the whole state tree. In truth, it is just an object. 
+      To change the state, you must <b class="highlight">Commit</b> a mutation to it.
+    </div>
+  </div>
+
+  <div class="section">
+    <heading-sub heading="Context Object"></heading-sub>
+    <div class="info">
+      The <b>context</b> is an object with access to your properties inside your <b>State Object</b>.
+      It is passed to all methods inside your getters, mutations and actions. The <b>context</b> object allows you to get
+      properties out of your <b>state</b> or call a method from your <b>mutations</b> or
+      <b>actions</b>. Below is a table showing every property inside the <b>Context Object</b>.<br><br>
+    </div>
+    <table>
+      <th class="first">Property</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th class="second">Params</th>
+      <tr>
+        <td><b>$state</b></td>
+        <td>Object</td>
+        <td>Allows access to your state object</td>
+        <td>N/A</td>
+      </tr>
+      <tr>
+        <td><b>$mutations</b></td>
+        <td>Object</td>
+        <td>Allows access to all your mutation methods</td>
+        <td>N/A</td>
+      </tr>
+      <tr>
+        <td><b>$actions</b></td>
+        <td>Object</td>
+        <td>Allows access to all your action methods</td>
+        <td>N/A</td>
+      </tr>
+      <tr>
+        <td><b>Commit()</b></td>
+        <td>Method</td>
+        <td>Allows you to call a method inside your mutations object</td>
+        <td>Method Name, Payload</td>
+      </tr>
+      <tr>
+        <td><b>Dispatch()</b></td>
+        <td>Method</td>
+        <td>Allows you to call a method inside your actions object</td>
+        <td>Method Name, Payload</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <heading-sub heading="The State Object"></heading-sub>
+    <div class="info">
+      The <b>state</b> property is the main object of <b>variables/properties</b> in which you
+      will be storing and minipulating data. For example you could add a property to the <b>state</b> called users.
+      And this could be an array of user objects.
+    </div>
+    <img-comp src="./src/images/stateObject.jpg"></img-comp>
+  </div>
+
+  <div class="section">
+    <heading-sub heading="The Getters Object"></heading-sub>
+    <div class="info">
+      The <b>getters</b> property will be an object of methods. The method's job is to <b class="highlight">get values out of your state</b>.
+      For example, lets say you want to get the user james out of your array of users we showed you above.<br><br>
+
+      You would create a <b>getter</b> method. Lets call it <b class="highlight">getUser()</b>. How do we access the
+      state? Well, all getters get passed the <b class="highlight">previous state</b> and a payload that you set when calling a getter. 
+      See the example below.
+    </div>
+    <img-comp src="./src/images/getters.jpg"></img-comp>
+  </div>
+
+  <div class="section">
+    <heading-sub heading="The Mutations Object"></heading-sub>
+    <div class="info">
+      The <b>mutations</b> property holds all your methods <b class="highlight">that update or change</b> your state.
+      Just like we explained above, all mutations get passed the <b>context</b> object, and a payload you set.<br><br>
+
+      As an example, lets say you want to update the user within state called <b>"James"</b> to a name you pass
+      in your <b>payload</b>. We would then create a <b class="highlight">mutation</b> with a name along the lines
+      of <b class="highlight">"updateUser()"</b> which would do so. As you can see we decontruct the 
+      <b>context object</b> only to use the state from it, See example below.
+    </div>
+    <warn-comp head="Note" text="All mutaions need to be synchronous to ensure that the state isn’t dependent 
+    on the timing and order of unpredictable (asynchronous) events."></warn-comp>
+    <img-comp src="./src/images/commit.jpg"></img-comp>
+  </div>
+
+  <div class="section">
+    <heading-sub heading="The Actions Object"></heading-sub>
+    <div class="info">
+      The <b>actions</b> property is very similar to the mutations property, but there is one key difference between
+      a mutation method and an action method. All actions are for <b class="highlight">asynchronous</b> calls and should never 
+      update or change the state itself. Rather you should call a mutation once you have the 
+      <b class="highlight">asynchronous</b> data and pass it as a payload.<br><br>
+      <!-- Therefore <b>actions</b> get passed a 3rd parameter called <b>done</b>. This is a <b>callback function</b> 
+      which needs to be called once you are done with your changes to your <b>state</b>. This callback will 
+      alert your <b>view</b> that changes have been made to your state and needs to <b>act accordingly</b>. -->
+
+      For example, say we have a table in a <b class="highlight">database</b> which conatins all our users. Now we want to get a
+      user and then insert him/her into our <b class="highlight">state</b>. Here is where an action will come into play. Lets call
+      this action <b class="highlight">getUserFromDB()</b>, and fetch the user from our database. Once we get the user, we can
+      call a <b class="highlight">mutaion</b> to insert the user we just got back. See example below.
+    </div>
+    <img-comp src="./src/images/action.jpg"></img-comp>
+  </div>
+
+</div>

@@ -1,0 +1,6 @@
+#hello-world {
+  width: 100%;
+  display: flex;
+  background-color: #dadada;
+  animation: fadeIn 500ms ease-in forwards;
+}

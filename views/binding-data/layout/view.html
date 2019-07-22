@@ -1,0 +1,173 @@
+
+<!-- //? Navbar -->
+<navBar></navBar>
+
+<!-- //? all content -->
+<div class="content">
+  <heading-main heading="Data Binding"></heading-main>
+
+  <div class="section">
+    <heading-sub heading="Why Bind Data?"></heading-sub>
+    <div class="info">
+      We Know that alot of applications separate markup and logic into separtate files. In Quantum JS we
+      decided to allow both to work side by side. We enable this with
+      <b>Declerative Expressions</b>. These expressions make your UI alot easier to read
+      and understand.
+    </div>
+  </div>
+
+  <div class="section">
+    <heading-sub heading="How to Bind a property"></heading-sub>
+    <div class="info">
+      In order to bind a variable to your template, all you need to do is wrap the property name in
+      <b class="highlight">Moustache Braces</b> and place it anywhere in your template like this.
+    </div>
+    <img-comp src="./src/images/bindVar.jpg"></img-comp>
+    <div class="info">
+      By doing this, Quantum will get your property value and place it in the position you placed it in.
+      <warn-comp head="Warning" text="Unfortunately you can only add one expression per html element. For
+      example, if you are wanting to join a firstname and lastname with expressions, you will need to wrap
+      each expression in a div or span element"></warn-comp>
+    </div>
+  </div>
+
+  <div class="section">
+    <heading-sub heading="Directives"></heading-sub>
+    <div class="info">
+      Directives are special attributes with the <b class="highlight">"&#64;"</b> prefix that Quantum
+      JS has built in out of the box. They are used to make you development alot faster and apply changes
+      to the <b>DOM</b> when your <b class="highlight">View Model</b> updates.<br><br>
+    </div>
+    <heading-sub heading="&#64;If Directive"></heading-sub>
+    <div class="info">
+      The <b class="highlight">&#64;If</b> directive is used when you are wanting to render an element
+      dependent on a <b class="highlight">truthy</b> value in your view model</b>.
+    </div>
+    <div class="info">
+        For example, lets say you have a <b>div</b> which should be displayed when a user
+        doesn't fill in an input field. We would use the <b class="highlight">&#64;If</b>.
+      </div>
+    <img-comp src="./src/images/bindingEG.jpg"></img-comp>
+    <img-comp src="./src/images/bindingEG2.jpg"></img-comp>
+    <div class="info">
+      As you can see the property <b>showErr</b> is true, which means the element with
+      the <b>&#64;If</b> directive will be displayed.<br><br>
+    </div>
+  </div>
+
+  <div class="section">
+    <heading-sub heading="&#64;Bind Directive"></heading-sub><br>
+    The <b class="highlight">@Bind</b> directive is very useful. You can use this directive to bind a
+    property in your <b class="highlight">View Model</b> to an attribute on an element. For instance, if
+    you want to apply a class to an element if an error occurs. You would use the
+    <b class="highlight">&#64;Bind:class</b> attribute to do so.<br></br>
+    <img-comp src="./src/images/bindProp1.jpg"></img-comp>
+    <img-comp src="./src/images/bindProp.jpg"></img-comp>
+    <heading-subSmall heading="What can you bind to?"></heading-subSmall>
+    <table>
+      <tr>
+        <th class="first">Binding</th>
+        <th class="type">Type</th>
+        <th class="second">Description</th>
+      </tr>
+      <tr>
+        <td class="binding">&#64;Bind:id</td>
+        <td class="type">String</td>
+        <td class="desc">Allows you to bind your prop to the ID of the element</td>
+      </tr>
+      <tr>
+        <td class="binding">&#64;Bind:class</td>
+        <td class="type">String</td>
+        <td class="desc">Allows you to bind your prop to the CLASS of the element</td>
+      </tr>
+      <tr>
+        <td class="binding">&#64;Bind:disabled</td>
+        <td class="type">Boolean</td>
+        <td class="desc">Will add a disbaled attribute to the element depending on the value of your prop</td>
+      </tr>
+      <tr>
+        <td class="binding">&#64;Bind:checked</td>
+        <td class="type">Boolean</td>
+        <td class="desc">This will set a checked attribute to the element depending on the value of your prop</td>
+      </tr>
+      <tr>
+        <td class="binding">&#64;Bind:href</td>
+        <td class="type">String</td>
+        <td class="desc">Will set the href attribute to the value of your prop</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <heading-sub heading="&#64;On Directive"></heading-sub>
+    <div class="info">
+    The <b class="highlight">@On</b> directive is used to bind a users action to an element. For example, if you have a
+    button to alert a user's name once it's clicked. You would use the <b class="highlight">&#64;On:click</b> directive
+    and this would add a <b class="highlight">click</b> event listener to that element.
+    </div>
+    <img-comp src="./src/images/onProp.jpg"></img-comp>
+    <img-comp src="./src/images/onProp1.jpg"></img-comp>
+    <heading-subSmall heading="What can you bind to?"></heading-subSmall>
+    <table>
+      <tr>
+        <th class="first">Binding</th>
+        <th>Type</th>
+        <th class="second">Description</th>
+      </tr>
+      <tr>
+        <td class="binding">&#64;On:click</td>
+        <td class="type">String</td>
+        <td class="desc">This will add a click <b>event</b> to your element</td>
+      </tr>
+      <tr>
+        <td class="binding">&#64;On:enter</td>
+        <td class="type">String</td>
+        <td class="desc">This enables you to add an enter <b>event</b> to your element</td>
+      </tr>
+      <tr>
+        <td class="binding">&#64;On:submit</td>
+        <td class="type">String</td>
+        <td class="desc">This allows you to add a submit <b>event to a form</b></td>
+      </tr>
+      <tr>
+        <td class="binding">&#64;On:change</td>
+        <td class="type">String</td>
+        <td class="desc">This allows you to add an onchange <b>event</b> to your element</td>
+      </tr>
+      <tr>
+        <td class="binding">&#64;On:enter</td>
+        <td class="type">String</td>
+        <td class="desc">This allows you to add an enter key <b>event</b> to your element</td>
+      </tr>
+      <tr>
+        <td class="binding">&#64;On:scroll</td>
+        <td class="type">String</td>
+        <td class="desc">This allows you to add a scroll <b>event</b> to your element</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="section">
+
+    <heading-sub heading="&#64;Reflect Directive"></heading-sub>
+    <div class="info">
+      The <b class="highlight">&#64;Reflect</b> directive is a very special attribute. By adding this attribute
+      to an element, you bind the value of that element to the value of your <b>View Model</b>,
+      property, and the propery inside your <b>View Model</b> is bound to the value of the element. This is called
+      <b class="highlight">Two way data binding</b>. Any updates that happen to the <b>controller and model</b>,
+      will update the <b class="highlight">DOM</b>, as well as any updates that happen in the <b>DOM</b> will
+      update your <b class="highlight">View Model</b>
+    </div>
+    <div class="info">
+      In the example below, we have an input which is bound to <b class="highlight">userInput</b> in the view model.
+      And a heading which is also bound to the same property.
+    </div>
+    <img-comp src="./src/images/reflectProp.jpg"></img-comp>
+    <img-comp src="./src/images/reflectProp1.jpg"></img-comp>
+    <div class="info">
+      If you where to type something inside the input field it would set the <b class="highlight">View Model</b>
+      property, which would update any other elements in the <b class="highlight">DOM</b> with the same binding.
+      In this case it would be the <b class="highlight">heading</b>.
+    </div>
+  </div>
+</div>

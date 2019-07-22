@@ -1,0 +1,183 @@
+
+<!-- //? Navbar -->
+<navBar></navBar>
+
+<!-- //? all content -->
+<div class="content">     
+  <heading-main heading="The View Controller"></heading-main>
+
+  <div class="section">      
+    <heading-sub heading="Overview of this Section"></heading-sub> 
+    <div class="info">
+      In this section, we will teach you all the basics and fundamentals of Quantum JS <b>View Controllers</b> 
+      to enable you to start building amazing and beautiful projects.<br><br>
+      We will go over the basics of how to structure your <b>Controller</b> and will explain the different 
+      parts of it, and what it does. So lets get started!
+    </div>      
+  </div>
+
+  <div class="section">      
+    <heading-sub heading="The Controller"></heading-sub>
+    <div class="info">
+      The <b>Controller</b> is where all of you buisness logic will go. It is what <b>"controlls"</b> 
+      your application. The <b>Controller</b> also comes with a few features which help you down the 
+      line while you are creating your application. Lets take a look at each part of the Controller to 
+      help you understand how best to utilize it to it's full potential.      
+    </div>
+    <div class="indent">
+      <heading-small heading="How to create a Controller?"></heading-small>
+      <div class="info">
+        The crontroller is a class which <b>extends a base class</b>. This allows your class to inherit all
+        the functionality of the <b>Controller</b>. The contructor of your class will call <b class="highlight">super()</b> to
+        instantiate the base class. When you call <b class="highlight">super()</b>, you need to pass it the options for your
+        <b>Controller</b>. These options will come from your view <b>Model</b> which holds the Controllers 
+        options and model. See <link-comp label="View Model" router="/view-model"></link-comp> if you don't 
+        know what or how it works. Once you have called <b class="highlight">supre()</b> and passed it's options, you can now call
+        the <b class="highlight">render()</b> method passing the absolute path to your html view file. Or you can pass a string template
+        instead. See example below.
+      </div>
+      <img-comp src="./src/images/viewController1.jpg"></img-comp>           
+    </div>
+  </div>
+    
+  <div class="section"> 
+    <heading-sub heading="Lifecycle Methods"></heading-sub>
+      <heading-small heading="View Initialization"></heading-small>
+      <div class="info">
+        In the <b>lifecycle</b> of your application, it will initialize before all the setup for that view is finnished.
+        Eg: before the view has been <b>redered</b>, or all your <b>interpolation</b> has been accounted for. In your Controller,
+        there is a method called <b class="highlight">"viewInitialized()"</b>. This method will be called once the view has been
+        <b>initialized</b>. It is also passed the current application state, as props for that method.
+      </div>
+      <heading-small heading="View Updates"></heading-small>
+      <div class="info">
+        Later on once you make <b>changes to your application state</b>, your controller needs to update with the new
+        data from the state. Well just like the controller comes with an initialization method, it also comes with
+        an <b>update method</b> which is called every time there is a change to your application state. 
+        The method is called <b class="highlight">"viewDidUpdate()"</b>. It is also passed the current application state, 
+        as props for that method.
+      </div>
+      <heading-small heading="View After Initialization"></heading-small>
+      <div class="info">
+        Both these methods are required to create a working <b>View Controller</b>. But there is one more built in
+        method which will be called after any initialization has happened. It is called <b class="highlight">"viewDidInitialize()"</b>
+        This method will be called after all rendering has happened already and the view is ready for use.  
+        It is also passed the current application state, as props for that method.
+      </div>
+      <img-comp src="./src/images/init&UpdateMethods.jpg"></img-comp>
+      <div class="info">
+        Once you have these <b>Lifecycle Methods</b> within your Controller, you are ready to go an start
+        writing your own buisness logic into the Controller itself.
+      </div>
+  </div>
+
+  <div class="section"> 
+    <heading-sub heading="Using State Correctly"></heading-sub>
+    <div class="info">
+      There are a few rules you need to understand before minipulating your <b>Controller's State</b>.
+    </div>
+    <heading-small heading="Never set your controller's state directly"></heading-small>
+    <div class="info">
+      For example, by doing this, the view associated with this controller will not be updated 
+      with the new values.
+    </div>
+    <img-comp src="./src/images/badStatePrac.jpg"></img-comp>
+    <div class="info">
+      Rather use <b class="highlight">setState()</b>. It has 2 arguments, the first being an object of the values
+      to update and the second being a boolean. <b class="highlight">NOTE</b> this boolean is optional. It is
+      only required to be <b>true</b> if you are using this method within the view controller's <b class="highlight">viewDidUpdate()</b>
+      method.
+    </div>
+    <img-comp src="./src/images/correctStatePrac.jpg"></img-comp>
+    <heading-small heading="Setting nested properties"></heading-small>
+    <div class="info">
+      If you are trying to set a nested state property, you would use <b class="highlight">setSate()</b> exactly the same,
+      but the only difference is, you change the proptery name to a <b>string</b>. 
+    </div>
+    <img-comp src="./src/images/nestedStatePrac.jpg"></img-comp>
+    <heading-small heading="Passing 'setState()' a  callback"></heading-small>
+    <div class="info">
+      You are also able to pass a callback function instead of an object. The function would take to arguments.
+      The first being the previous state, and the second being the properties of the controller at the time 
+      of the update. 
+    </div>
+    <img-comp src="./src/images/functionalStatePrac.jpg"></img-comp>
+  </div>  
+
+  <div class="section"> 
+    <heading-sub heading="Access to Global State"></heading-sub>
+    <div class="info">
+      All <b>View Controllers</b> have access to the application's global state. If you don't know what the
+      global state is, see <link-comp label="State Management" router="/state-management"></link-comp>. 
+      There are 3 methods that you can use in order to access your global state's 
+      <b class="highlight">Getters, Mutations and Actions</b>. 
+    </div>
+    <div class="info">
+      If you are wanting to call a <b>getter</b> in your global state, you will need to use the <b class="highlight">this.$state.Get()</b>
+      method. It requires one arguments being a <b>string name</b> of the method you want to call.
+    </div>
+    <img-comp src="./src/images/stateGet.jpg"></img-comp>
+    <div class="info">
+      If you are wanting to call a <b>mutation</b> in your global state, you will need to use the <b class="highlight">this.$state.Commit()</b>
+      method. It requires two arguments, the first being a <b>string name</b> of the method you want to call, and the second
+      being the <b>props</b> you want to pass to it.
+    </div>
+    <img-comp src="./src/images/stateCommit.jpg"></img-comp>
+    <div class="info">
+      If you are wanting to call a <b>action</b> in your global state, you will need to use the <b class="highlight">this.$state.Dispatch()</b>
+      method. It requires two arguments, the first being a <b>string name</b> of the method you want to call, and the second
+      being the <b>props</b> you want to pass to it.
+    </div>
+    <img-comp src="./src/images/stateDispatch.jpg"></img-comp>    
+  </div>  
+
+  <div class="section"> 
+    <heading-sub heading="Access to Interfaces"></heading-sub>
+    <div class="info">
+      If you are wanting to use an interface you have created in your <b>Interfaces File</b>, you will need to
+      call <b class="highlight">this.$interface.get()</b>. this method will accept one argument being a
+      <b>string referance</b> of the interface you would like returned to you.
+    </div>
+    <img-comp src="./src/images/interface.jpg"></img-comp>
+  </div>
+
+  <div class="section"> 
+    <heading-sub heading="Controller Events"></heading-sub>
+    <div class="info">
+      The controller also comes with some very useful <b>Events</b> for you to use at your desposal. For example
+      if you would like to emit some data for another Controller to accept, you could use the 
+      <b class="highlight">this.$events.emit()</b> to emit the data and <b class="highlight">this.$events.accept()</b>
+      to accept the data.
+    </div>
+    <heading-small heading="Emit Event"></heading-small>
+    <div class="info">
+      The <b class="highlight">this.$events.emit()</b> method is there for you to "emit" some data to any other view or the same one it was emitted
+      from. It has two arguments, one being a <b>string name</b> of the event, and two being the data to <b>emit</b>.
+    </div>
+    <heading-small heading="Accept Event"></heading-small>
+    <div class="info">
+      The <b class="highlight">this.$events.accept()</b> method is there for you to "accept" some data from any other view or the same one
+      the data was emitted from. It has one argument being a <b>string name</b> of the event that was <b>emitted</b>.
+    </div>
+    <heading-small heading="Back Event"></heading-small>
+    <div class="info">
+      The <b class="highlight">this.$events.goBack()</b> method allows you to route back to the previous page you were just at.
+    </div>
+    <heading-small heading="Route Event"></heading-small>
+    <div class="info">
+      The <b class="highlight">this.$events.route()</b> method allows you to route to another page of your choice. It takes two arguments.
+      The first being a <b>string route</b> you wanting to go to. And the second being some <b>optional parameters</b> you would
+      like to pass to that route.
+    </div>
+    <heading-small heading="Add Crumb Event"></heading-small>
+    <div class="info">
+      The <b class="highlight">this.$events.addCrumb()</b> method allows you to add a <b>breadcrumb</b> to the end of the
+      breadcrumbs array, Quantum JS uses. It takes one argument being a <b>string crumb</b>.
+    </div>
+    <heading-small heading="Remove Crumb Event"></heading-small>
+    <div class="info">
+      The <b class="highlight">this.$events.removeLastCrumb()</b> method allows you to <b>remove</b> the last breadcrumb that was added.
+    </div>
+  </div>
+
+</div>

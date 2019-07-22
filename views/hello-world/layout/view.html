@@ -1,0 +1,51 @@
+<!-- //? Navbar -->
+<navBar></navBar>
+
+<!-- //? all content -->
+<div class="content">
+  <heading-main heading="Your first Hello World Application"></heading-main>
+
+  <div class="section">
+    <heading-sub heading="Start Up"></heading-sub>
+    <div class="info">
+      Once you have the initial <b>"app.config.js"</b> file setup, you need to create some views to route to. If you do not know how to create a view already please see the <link-comp label="View Contoller" router="/view-controller"></link-comp> to help you get started with creating a view.
+    </div>
+    <div class="info">
+      If you are wanting to see how to create an app from start to finnish. Please see <link-comp label="Our Tutorial" router="/helloWorld"></link-comp> which will take you through all the steps necessary to create an application.
+    </div>
+    <tip-comp head="NOTE" text="This is a very simple guide to help you create a silly application, but shows you some basics while doing so."></tip-comp>
+  </div>
+
+  <div class="section">
+    <heading-sub heading="What will we Make?"></heading-sub>
+    <div class="info">
+      We are going to make an app in which you will type your name into an input and a <b>heading</b> will start to update with your provided name. Then once you click a button it will alert your <b>name</b>.
+    </div>
+  </div>
+
+  <div class="section">
+    <heading-sub heading="Setting up the View Controller"></heading-sub>
+    <div class="info">
+      Lets start with building the <b>View Controller</b> for the application. We will need an input which is bound to a property in you <b>Controller</b>. Lets call the property <b>"Name"</b>. We will also need a button that when clicked it calls a function that alerts your name. Lets call it <b>"tellName()"</b>
+    </div>
+    <heading-small heading="tellName Method"></heading-small>
+    <img-comp src="./src/images/helloWorldMethod.jpg"></img-comp>   
+    <heading-small heading="The Name Property"></heading-small>     
+    <img-comp src="./src/images/helloWorldModel.jpg"></img-comp>        
+  </div>
+
+  <div class="section">
+    <heading-sub heading="Setting up the Template"></heading-sub>
+    <div class="info">
+      Now that we have a property to bind the input to. lets add the input that we want to bind to <b>"Name"</b> and bind it. Awesome now we need to add a button which is bound to the function we created <b>"tellName()"</b>. As well as just display the <b>"Name"</b> for user feedback. If you don't know how to bind elements to your data set, please see <link-comp label="Data Binding" router="/data-binding"></link-comp> for more infomation.
+    </div>
+    <img-comp src="./src/images/helloWorldHTML.jpg"></img-comp>
+  </div>
+
+  <div class="section">
+    <heading-sub heading="Finnished!"></heading-sub>
+    <div class="info">
+      Well done! You have successfully created your first Quantum JS Application.
+    </div>
+  </div>
+</div>

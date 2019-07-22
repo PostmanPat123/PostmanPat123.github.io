@@ -1,0 +1,98 @@
+
+<!-- //? Navbar -->
+<navBar></navBar>
+
+<!-- //? all content -->
+<div class="content">     
+  <heading-main heading="The View Model"></heading-main>
+
+  <div class="section">      
+    <heading-sub heading="What is The View Model?"></heading-sub> 
+    <div class="info">
+      The <b>View Model</b> is a central place for the options and propterties of your <b>View Controller</b>.
+      These options and properties are vital for your view to work properly. Lets see what we mean by options
+      and properties.
+    </div>      
+  </div>
+  <div class="section">      
+    <heading-sub heading="View Model Options"></heading-sub> 
+    <div class="info">
+      Your options are there to help your controller understand more about where things are in the current view.
+      For example your <b>View Controller</b> needs to know where it needs to be rendering the current view too.
+      Lets take a look at what options you can have.
+    </div>
+    <heading-small heading="Render Prop"></heading-small>
+    <div class="info">
+      The <b class="highlight">ele</b> property specifies where the current view will be rendered to. For example,
+      lets say we have our main <b>root div</b>, and we would like to render our view into it. All we do is pass the
+      <b class="highlight">ID</b> of that element to the <b>ele</b> prop.
+    </div>
+    <img-comp src="./src/images/eleProp.jpg"></img-comp>
+    <heading-small heading="Style Prop"></heading-small>
+    <div class="info">
+      The <b class="highlight">style</b> property specifies where the style sheet you would like to use for your
+      current view is in your view folder.
+    </div>
+    <img-comp src="./src/images/styleProp.jpg"></img-comp>
+    <heading-small heading="View Prop"></heading-small>
+    <div class="info">
+      The <b class="highlight">view</b> property specifies where the html file you would like to use for your
+      current view is in your view folder.
+    </div>
+    <img-comp src="./src/images/viewProp.jpg"></img-comp>
+    <heading-small heading="Folder Name Prop"></heading-small>
+    <div class="info">
+      The <b class="highlight">folderName</b> property specifies the name of the folder which contains the current
+      views files.
+    </div>
+    <img-comp src="./src/images/folderNameProp.jpg"></img-comp>
+    <heading-small heading="Components Prop"></heading-small>
+    <div class="info">
+      The <b class="highlight">components</b> property is a list of all the <b>components</b> you are going
+      to be using inside of your view template.
+    </div>
+    <img-comp src="./src/images/componentsProp.jpg"></img-comp>
+  </div>
+  <div class="section">      
+    <heading-sub heading="View Model State"></heading-sub> 
+    <div class="info">
+      Your state is all the properties your controller will ever need or use. For example, say you need to save
+      some user data. You would setup a property in your state, we will call it <b class="highlight">userData</b>,
+      and whenever you would want to save that <b>user data</b>, you would use the <b class="highlight">setState()</b>
+      method and update you state property.
+    </div>
+    <img-comp src="./src/images/modelState.jpg"></img-comp>
+    <div class="info">
+      As you can see the <b class="highlight">State Object</b> isn't just an empty object for you to change.
+      It has two properties. The first being <b class="highlight">scoped</b> and the second being <b class="highlight">global</b>
+      These properties both have special use cases, for you to utilize. Lets take a look at what the do.
+    </div>
+    <heading-small heading="Scoped Object"></heading-small>
+    <div class="info">
+      The <b class="highlight">scoped object</b> property would be used if you are wanting to set a property for your
+      <b>View Controller</b> that will only be used on the current view. Meaning it scopes that prop to this
+      view only and other views are not able to access that property. For example, lets say you are building
+      a view which displays an error if you dont't fill in a field. this error will show if you set 
+      <b class="highlight">showError</b> to <b>true</b>. This <b>showError</b> property would go inside the
+      <b class="highlight">scoped object</b>.
+    </div>
+    <img-comp src="./src/images/modelStateScoped.jpg"></img-comp>
+    <heading-small heading="Global Object"></heading-small>
+    <div class="info">
+      The <b class="highlight">global object</b> property would be used if you are wanting to set a property for your
+      <b>View Controller</b> that will not only be accessed by the current <b>View Controller</b> but others
+      as well. How though? Well if you put a property inside the <b class="highlight">global object</b>,
+      it will not only be set inside the controller, but the applications global state object as well. Meaning 
+      that property is accessable via state on any other view.
+    </div>
+    <img-comp src="./src/images/modelStateGlobal.jpg"></img-comp>
+    <heading-small heading="Scoped/Global Object"></heading-small>
+    <div class="info">
+      The <b class="highlight">scoped/global object</b> property is the same as the <b class="highlight">global object</b>,
+      but the only difference is that the scoped object inside of the global object will be set under the <b>View Controller's</b>
+      name in the application's global state object.
+    </div>
+    <img-comp src="./src/images/modelStateGlobal_Scoped.jpg"></img-comp>
+  </div>
+
+</div>

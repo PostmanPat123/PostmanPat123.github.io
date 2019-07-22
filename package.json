@@ -1,0 +1,28 @@
+{
+  "name": "@jordan_langton/quantum-js",
+  "version": "1.7.6",
+  "description": "A light weight Javascript framework built for speed",
+  "main": "./modules/quantum.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server --history-api-fallback --output-public-path=/build/development/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/PostmanPat123/quantum-js-v1.6.git"
+  },
+  "author": "Jordan Langton",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/PostmanPat123/quantum-js-v1.6#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/preset-typescript": "^7.3.3",
+    "babel-loader": "^8.0.5",
+    "babel-polyfill": "^6.26.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
+  },
+  "dependencies": {}
+}
