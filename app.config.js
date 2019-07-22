@@ -12,7 +12,7 @@ export default {
 
   "name": "Test App",
   "version": "1.0.0",
-  "build": "development",
+  "build": "production",
   "description": "This is a test application",
   "baseView": "/",
   "appWrapper": "#app",
